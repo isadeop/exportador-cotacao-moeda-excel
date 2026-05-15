@@ -8,5 +8,6 @@ public record Moeda(
         String name,
         BigDecimal bid,
         BigDecimal high,
-        BigDecimal low
+        BigDecimal low,
+        String data
 ) {}

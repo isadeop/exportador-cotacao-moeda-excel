@@ -7,13 +7,13 @@ import java.net.http.HttpResponse;
 import java.util.Optional;
 
 public class AwesomeApiClient {
-    private static final String BASE_URL = "https://economia.awesomeapi.com.br/json/last/";
 
-    public Optional<String> buscarCotacoes(String moedas) {
-        // Faz o request pro endpoint conforme moedas solicitadas
+    private static final String BASE_URL = "https://economia.awesomeapi.com.br/json/daily/";
+
+    public Optional<String> buscarHistorico(String moedas, int dias) {
         try (HttpClient client = HttpClient.newHttpClient()) {
             HttpRequest request = HttpRequest.newBuilder()
-                    .uri(URI.create(BASE_URL + moedas))
+                    .uri(URI.create(BASE_URL + moedas + "/" + dias))
                     .GET()
                     .build();
 
