@@ -1,3 +1,5 @@
+import services.InteractiveMenu;
+
 void main() {
-  IO.println(String.format("Hello and welcome!"));
+    new InteractiveMenu().iniciar();
 }
